@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\API",
-    "\\API\\Controllers"
+    "\\API\\Controllers",
+    "\\API\\Properties"
   ],
-  "SelectedNode": "\\API\\Controllers\\WeatherForecastController.cs",
+  "SelectedNode": "\\API\\Controllers",
   "PreviewInSolutionExplorer": false
 }
