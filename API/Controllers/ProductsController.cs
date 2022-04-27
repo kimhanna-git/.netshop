@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using API.Data;
+using API.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -7,15 +9,23 @@ namespace API.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        [HttpGet]
-        public string GetProducts()
+        private readonly StoreContext _context;
+
+        public ProductsController(StoreContext context)
         {
-            return "this will be a list of products";
+            _context = context;
+        }
+
+        [HttpGet]
+        public ActionResult<List<Product>> GetProducts()
+        {
+            var products = _context.Products.ToList();   
+            return Ok(products);
         }
         [HttpGet("{id}")]
-        public string GetProduct(int id)
+        public ActionResult<Product> GetProduct(int id)
         {
-            return "single product";
+            return _context.Products.Find(id);
         }
 
     }
