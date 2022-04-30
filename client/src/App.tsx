@@ -9,7 +9,7 @@ function App() {
   );
   
   useEffect(() => {
-    fetch('http://localhost:7148/api/products')
+    fetch('http://localhost:5000/api/products')
       .then(response => response.json())
       .then(data => setProducts(data))
   }, [])
@@ -20,7 +20,7 @@ function App() {
   }
   return (
     <div>
-      <h1 style={{color: 'blueviolet'}}>.NETSHOP</h1>
+      <h1 style={{color: 'brown'}}>.NETSHOP</h1>
       <ul>
         
         {products.map((item, index) => (
