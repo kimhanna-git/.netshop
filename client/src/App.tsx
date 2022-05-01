@@ -4,7 +4,7 @@ function App() {
   const [products, setProducts] = useState(
     [
       {name: 'product1', price: 100.00},
-      {name: 'product2', price: 150.00},
+      {name: 'product2', price: 200.00},
     ]
   );
   
