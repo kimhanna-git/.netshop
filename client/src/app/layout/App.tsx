@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Catalog from "../../features/catalog/Catalog";
 import { Product } from "../models/product";
 
 function App() {
@@ -24,14 +25,8 @@ function App() {
   return (
     <div>
       <h1 style={{color: 'brown'}}>.NETSHOP</h1>
-      <ul>
-        
-        {products.map(product => (
-          <li key={product.id}>{product.name} - {product.price}</li>
-
-        ))}
-      </ul>
-      <button onClick={addProduct}>Add Product</button>
+      <Catalog products={products} addProduct={addProduct} />
+      
       
     </div>
   );
