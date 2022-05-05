@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import Catalog from "../../features/catalog/Catalog";
 import { Product } from "../models/product";
@@ -19,16 +20,16 @@ function App() {
       price: (prevState.length * 100) + 100,
       brand: 'Gucci',
       description: 'some description',
-      pictureUrl: 'http://hannapic.photos/261722'
+      pictureUrl: 'http://picsum.photos/200'
     }])
   }
   return (
-    <div>
-      <h1 style={{color: 'brown'}}>.NETSHOP</h1>
+    <>
+      <Typography variant='h1'>.NETSHOP</Typography>
       <Catalog products={products} addProduct={addProduct} />
       
       
-    </div>
+    </>
   );
 }
 
