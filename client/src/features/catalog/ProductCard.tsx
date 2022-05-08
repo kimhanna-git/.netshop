@@ -1,6 +1,7 @@
-import { ListItem, ListItemAvatar, Avatar, ListItemText, CardActionArea, Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
+import { ListItem, ListItemAvatar, Avatar, ListItemText, CardActionArea, Button, Card, CardActions, CardContent, CardMedia, Typography, CardHeader } from "@mui/material";
 import { Product } from "../../app/models/product";
 import { makeStyles } from '@mui/styles';
+import { responsiveFontSizes } from "@material-ui/core";
 
 
 interface Props {
@@ -20,28 +21,39 @@ export default function ProductCard({product}: Props) {
 
     return (
         <Card className={classes.root}>
-      ``<CardActionArea>
+      <CardActionArea>
+        <CardHeader
+          avatar={
+            <Avatar sx={{bgcolor: 'secondary.main'}}>
+              {product.name.charAt(0).toUpperCase()}
+            </Avatar>
+          }
+          title={product.name}
+          titleTypographyProps={{
+            sx: {fontWeight: 'bold', color: 'primary.main', fontSize: 20}
+          }}
+        
+        />
         <CardMedia
-          className={classes.media}
-          image="http://picsum.photos/200"
-          title="Contemplative Reptile"
+          sx={{height: 140, backgroundSize: 'contain', bgcolor: 'primary.light'}}
+          image={product.pictureUrl}
+          title={product.name}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+          <Typography gutterBottom color='secondary' variant="h5" component="h2">
+            ${(product.price / 100).toFixed(2)}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            {product.brand} / {product.type}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
-          Share
+          Add to cart
         </Button>
         <Button size="small" color="primary">
-          Learn More
+          View
         </Button>
       </CardActions>
     </Card>
