@@ -29,7 +29,6 @@ export default function Header({darkMode, handleThemeChange}: Props) {
                 <List>
                     {midLinks.map(({title, path}) => (
                         <ListItem
-
                         >
                             {title.toUpperCase()}
                             
