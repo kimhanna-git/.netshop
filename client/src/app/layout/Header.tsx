@@ -8,14 +8,14 @@ interface Props {
 const midLinks = [
     
     {title: 'catalog', path: '/catalog'},
-    {about: 'about', path: '/about'},
-    {contact: 'contact', path: '/contact'},
+    {title: 'about', path: '/about'},
+    {title: 'contact', path: '/contact'},
 ]
 
 const rightLinks = [
     
     {title: 'login', path: '/login'},
-    {about: 'register', path: '/register'},
+    {title: 'register', path: '/register'},
 ]
 
 export default function Header({darkMode, handleThemeChange}: Props) {
