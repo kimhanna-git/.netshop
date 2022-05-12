@@ -1,7 +1,7 @@
 
 import { Container, createTheme, CssBaseline, Typography, ThemeProvider } from "@mui/material";
 import { useState } from "react";
-import { Route } from "react-router-dom";
+import { Route, Router } from "react-router-dom";
 import AboutPage from "../../features/about/AboutPage";
 import Catalog from "../../features/catalog/Catalog";
 import ProductDetails from "../../features/catalog/ProductDetails";
